@@ -1,0 +1,1672 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EcoBuild Consultancy - Professional Green Building Solutions, LEED Certification, Energy Audits, and Sustainable Architecture">
+<meta name="keywords" content="green building, sustainable architecture, LEED certification, energy audit, solar panel consultation">
+<title>EcoBuild Consultancy | Building a Sustainable Future</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --green-50: #f0fdf4;
+  --green-100: #dcfce7;
+  --green-200: #bbf7d0;
+  --green-400: #4ade80;
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --green-700: #15803d;
+  --green-800: #166534;
+  --green-900: #14532d;
+  --dark: #1a1f1a;
+  --dark-2: #242924;
+  --dark-3: #2f352f;
+  --gray-100: #f8f9f8;
+  --gray-200: #e8ece8;
+  --gray-400: #9aaa9a;
+  --gray-600: #5a6b5a;
+  --white: #ffffff;
+  --accent: #5be37d;
+  --accent-2: #a3e635;
+  --text-main: #1a1f1a;
+  --text-sub: #4a5a4a;
+  --card-bg: #ffffff;
+  --nav-bg: rgba(255,255,255,0.92);
+  --section-bg: #f8fdf8;
+  --border: #e0ece0;
+  --shadow: 0 4px 24px rgba(22,163,74,0.10);
+  --shadow-lg: 0 12px 48px rgba(22,163,74,0.16);
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+[data-theme="dark"] {
+  --text-main: #e8f0e8;
+  --text-sub: #9aaa9a;
+  --card-bg: #1e261e;
+  --nav-bg: rgba(26,31,26,0.95);
+  --section-bg: #161c16;
+  --border: #2a382a;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.5);
+  --dark: #0e130e;
+  --dark-2: #161c16;
+  --dark-3: #1e261e;
+  --white: #e8f0e8;
+  --gray-100: #1a221a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background: var(--section-bg);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--gray-100); }
+::-webkit-scrollbar-thumb { background: var(--green-500); border-radius: 99px; }
+
+/* ─── Utilities ─── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 96px 0; }
+.section-label { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-600); margin-bottom: 12px; }
+.section-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--text-main); line-height: 1.2; margin-bottom: 20px; }
+.section-sub { font-size: 1.05rem; color: var(--text-sub); max-width: 600px; line-height: 1.7; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 99px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all var(--transition); border: none; text-decoration: none; }
+.btn-primary { background: var(--green-600); color: #fff; }
+.btn-primary:hover { background: var(--green-700); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(22,163,74,0.35); }
+.btn-outline { background: transparent; color: var(--green-700); border: 2px solid var(--green-600); }
+.btn-outline:hover { background: var(--green-50); transform: translateY(-2px); }
+[data-theme="dark"] .btn-outline { color: var(--accent); border-color: var(--accent); }
+[data-theme="dark"] .btn-outline:hover { background: rgba(91,227,125,0.08); }
+.tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 99px; font-size: 0.78rem; font-weight: 600; background: var(--green-100); color: var(--green-800); }
+[data-theme="dark"] .tag { background: rgba(34,197,94,0.15); color: var(--green-400); }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+.hidden { display: none !important; }
+
+/* ─── Loader ─── */
+#loader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--green-900);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+#loader.done { opacity: 0; visibility: hidden; }
+.loader-logo { font-family: var(--font-display); font-size: 2.5rem; color: #fff; font-weight: 900; }
+.loader-logo span { color: var(--accent); }
+.loader-bar { width: 200px; height: 3px; background: rgba(255,255,255,0.2); border-radius: 99px; margin-top: 24px; overflow: hidden; }
+.loader-fill { height: 100%; background: var(--accent); border-radius: 99px; animation: loaderFill 1.4s ease forwards; }
+@keyframes loaderFill { from { width: 0 } to { width: 100% } }
+
+/* ─── Navigation ─── */
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: all var(--transition);
+}
+.nav-inner { display: flex; align-items: center; gap: 24px; height: 72px; }
+.nav-logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: var(--green-700); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+[data-theme="dark"] .nav-logo { color: var(--accent); }
+.nav-logo-icon { width: 36px; height: 36px; background: var(--green-600); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.1rem; }
+.nav-links { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.nav-link { padding: 8px 16px; border-radius: 99px; text-decoration: none; color: var(--text-sub); font-weight: 500; font-size: 0.9rem; transition: all var(--transition); }
+.nav-link:hover, .nav-link.active { color: var(--green-700); background: var(--green-50); }
+[data-theme="dark"] .nav-link:hover, [data-theme="dark"] .nav-link.active { color: var(--accent); background: rgba(91,227,125,0.08); }
+.nav-actions { display: flex; align-items: center; gap: 12px; margin-left: 16px; }
+.icon-btn { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--border); background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--text-sub); transition: all var(--transition); }
+.icon-btn:hover { border-color: var(--green-500); color: var(--green-600); background: var(--green-50); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--text-main); border-radius: 2px; transition: all var(--transition); }
+
+/* Search overlay */
+#search-overlay {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: flex-start; justify-content: center;
+  padding-top: 100px;
+  opacity: 0; visibility: hidden; transition: all var(--transition);
+}
+#search-overlay.open { opacity: 1; visibility: visible; }
+.search-box {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  width: 100%; max-width: 600px;
+  box-shadow: var(--shadow-lg);
+}
+.search-input-wrap { display: flex; align-items: center; gap: 12px; border: 2px solid var(--border); border-radius: 99px; padding: 12px 20px; }
+.search-input-wrap:focus-within { border-color: var(--green-500); }
+.search-input-wrap input { flex: 1; border: none; outline: none; font-size: 1rem; background: transparent; color: var(--text-main); }
+.search-results { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+.search-item { padding: 12px 16px; border-radius: var(--radius); cursor: pointer; transition: background var(--transition); border: 1px solid var(--border); }
+.search-item:hover { background: var(--green-50); border-color: var(--green-400); }
+[data-theme="dark"] .search-item:hover { background: rgba(91,227,125,0.08); }
+.search-item-title { font-weight: 600; color: var(--text-main); }
+.search-item-cat { font-size: 0.78rem; color: var(--text-sub); margin-top: 2px; }
+.no-results { text-align: center; padding: 32px; color: var(--text-sub); }
+
+/* ─── Hero ─── */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a1a0a 0%, #0f2d1f 50%, #1a3d1a 100%);
+  padding-top: 72px;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+}
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,26,10,0.9) 0%, rgba(15,45,31,0.75) 100%); }
+.hero-particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.particle {
+  position: absolute; width: 4px; height: 4px; border-radius: 50%;
+  background: rgba(91,227,125,0.4);
+  animation: float linear infinite;
+}
+@keyframes float {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+.hero-content { position: relative; z-index: 2; max-width: 780px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; background: rgba(91,227,125,0.15); border: 1px solid rgba(91,227,125,0.3); border-radius: 99px; margin-bottom: 32px; color: var(--accent); font-size: 0.85rem; font-weight: 600; }
+.hero-badge i { font-size: 0.75rem; animation: pulse 2s ease infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+.hero-title { font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 24px; }
+.hero-title span { color: var(--accent); }
+.hero-sub { font-size: 1.15rem; color: rgba(255,255,255,0.7); max-width: 560px; line-height: 1.7; margin-bottom: 40px; }
+.hero-btns { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 64px; }
+.hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.12); }
+.hero-stat-num { font-family: var(--font-display); font-size: 2.2rem; font-weight: 900; color: var(--accent); }
+.hero-stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+.hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,0.5); font-size: 0.78rem; z-index: 2; }
+.scroll-arrow { width: 24px; height: 40px; border: 2px solid rgba(255,255,255,0.25); border-radius: 12px; display: flex; align-items: flex-start; justify-content: center; padding-top: 6px; }
+.scroll-dot { width: 4px; height: 8px; background: rgba(255,255,255,0.5); border-radius: 2px; animation: scrollAnim 1.8s ease infinite; }
+@keyframes scrollAnim { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(12px); opacity: 0; } }
+
+/* ─── Stats ─── */
+#stats { background: var(--green-900); padding: 72px 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
+.stat-item { }
+.stat-num { font-family: var(--font-display); font-size: 3rem; font-weight: 900; color: var(--accent); }
+.stat-label { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 6px; }
+.stat-icon { font-size: 2rem; color: rgba(91,227,125,0.4); margin-bottom: 12px; }
+
+/* ─── About ─── */
+#about { background: var(--card-bg); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-image-wrap { position: relative; }
+.about-img { width: 100%; border-radius: var(--radius-xl); object-fit: cover; height: 500px; }
+.about-badge-float { position: absolute; bottom: -20px; right: -20px; background: var(--green-600); color: #fff; border-radius: var(--radius-lg); padding: 20px 24px; text-align: center; box-shadow: var(--shadow-lg); }
+.about-badge-num { font-family: var(--font-display); font-size: 2.5rem; font-weight: 900; }
+.about-badge-text { font-size: 0.82rem; opacity: 0.85; }
+.about-features { display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
+.about-feat { display: flex; align-items: flex-start; gap: 16px; padding: 20px; border-radius: var(--radius); border: 1px solid var(--border); transition: all var(--transition); }
+.about-feat:hover { border-color: var(--green-400); box-shadow: var(--shadow); transform: translateX(4px); }
+.about-feat-icon { width: 44px; height: 44px; background: var(--green-100); color: var(--green-700); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+[data-theme="dark"] .about-feat-icon { background: rgba(34,197,94,0.15); color: var(--green-400); }
+.about-feat-title { font-weight: 600; font-size: 0.95rem; color: var(--text-main); }
+.about-feat-desc { font-size: 0.85rem; color: var(--text-sub); margin-top: 4px; }
+
+/* Team */
+.team-section { padding-top: 80px; }
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; margin-top: 48px; }
+.team-card { text-align: center; }
+.team-avatar { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 16px; object-fit: cover; border: 4px solid var(--green-200); }
+[data-theme="dark"] .team-avatar { border-color: var(--green-800); }
+.team-name { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--text-main); }
+.team-role { color: var(--green-600); font-size: 0.85rem; font-weight: 500; margin-top: 4px; }
+[data-theme="dark"] .team-role { color: var(--green-400); }
+.team-social { display: flex; justify-content: center; gap: 10px; margin-top: 12px; }
+.team-social a { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-sub); font-size: 0.8rem; transition: all var(--transition); text-decoration: none; }
+.team-social a:hover { border-color: var(--green-500); color: var(--green-600); }
+
+/* ─── Services ─── */
+#services { background: var(--section-bg); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-top: 56px; }
+.service-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+  position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--green-500), var(--accent-2));
+  transform: scaleX(0); transition: transform var(--transition); transform-origin: left;
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--green-300); }
+.service-card:hover::before { transform: scaleX(1); }
+.service-icon { width: 56px; height: 56px; background: linear-gradient(135deg, var(--green-100), var(--green-200)); color: var(--green-700); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 20px; }
+[data-theme="dark"] .service-icon { background: linear-gradient(135deg, rgba(34,197,94,0.15), rgba(34,197,94,0.08)); color: var(--green-400); }
+.service-title { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: var(--text-main); margin-bottom: 10px; }
+.service-desc { font-size: 0.9rem; color: var(--text-sub); line-height: 1.7; }
+.service-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; color: var(--green-600); font-weight: 600; font-size: 0.88rem; text-decoration: none; transition: gap var(--transition); }
+[data-theme="dark"] .service-link { color: var(--green-400); }
+.service-link:hover { gap: 10px; }
+
+/* ─── Green Materials ─── */
+#materials { background: var(--card-bg); }
+.filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin: 40px 0; }
+.filter-btn { padding: 8px 20px; border-radius: 99px; border: 1.5px solid var(--border); background: transparent; cursor: pointer; font-size: 0.85rem; font-weight: 500; color: var(--text-sub); transition: all var(--transition); }
+.filter-btn:hover, .filter-btn.active { background: var(--green-600); color: #fff; border-color: var(--green-600); }
+.materials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
+.material-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  transition: all var(--transition);
+}
+.material-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.material-img { width: 100%; height: 180px; object-fit: cover; }
+.material-body { padding: 20px; }
+.material-cat { display: inline-block; padding: 3px 10px; border-radius: 99px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; }
+.material-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--text-main); margin-bottom: 6px; }
+.material-desc { font-size: 0.82rem; color: var(--text-sub); }
+.material-rating { display: flex; gap: 2px; margin-top: 12px; color: var(--green-500); font-size: 0.75rem; }
+
+/* ─── Projects ─── */
+#projects { background: var(--section-bg); }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin-top: 48px; }
+.project-card { border-radius: var(--radius-lg); overflow: hidden; position: relative; cursor: pointer; }
+.project-img { width: 100%; height: 280px; object-fit: cover; transition: transform 0.5s ease; display: block; }
+.project-card:hover .project-img { transform: scale(1.08); }
+.project-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,26,10,0.95) 0%, rgba(10,26,10,0.3) 50%, transparent 100%);
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 28px;
+  transition: all var(--transition);
+}
+.project-title { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: #fff; margin-bottom: 6px; }
+.project-meta { font-size: 0.82rem; color: rgba(255,255,255,0.65); }
+.project-popup-btn { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; padding: 8px 18px; background: var(--accent); color: #000; border-radius: 99px; font-size: 0.82rem; font-weight: 700; transform: translateY(8px); opacity: 0; transition: all var(--transition); text-decoration: none; }
+.project-card:hover .project-popup-btn { transform: translateY(0); opacity: 1; }
+
+/* Modal */
+#modal-overlay {
+  position: fixed; inset: 0; z-index: 3000;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  opacity: 0; visibility: hidden; transition: all var(--transition);
+}
+#modal-overlay.open { opacity: 1; visibility: visible; }
+.modal-box {
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  max-width: 700px; width: 100%;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  max-height: 90vh; overflow-y: auto;
+}
+.modal-img { width: 100%; height: 300px; object-fit: cover; }
+.modal-body { padding: 36px; }
+.modal-close { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.15); border: none; color: #fff; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+
+/* ─── Blog ─── */
+#blog { background: var(--card-bg); }
+.blog-cats { display: flex; flex-wrap: wrap; gap: 10px; margin: 32px 0; }
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px; }
+.blog-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: var(--card-bg); transition: all var(--transition); }
+.blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.blog-img { width: 100%; height: 200px; object-fit: cover; }
+.blog-body { padding: 24px; }
+.blog-date { font-size: 0.78rem; color: var(--text-sub); margin-bottom: 10px; }
+.blog-title { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--text-main); line-height: 1.4; margin-bottom: 10px; }
+.blog-excerpt { font-size: 0.85rem; color: var(--text-sub); line-height: 1.65; }
+.blog-read { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; font-size: 0.85rem; font-weight: 600; color: var(--green-600); text-decoration: none; cursor: pointer; transition: gap var(--transition); }
+[data-theme="dark"] .blog-read { color: var(--green-400); }
+.blog-read:hover { gap: 10px; }
+
+/* ─── Calculator ─── */
+#calculator { background: var(--green-900); padding: 96px 0; }
+.calc-inner { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-xl); padding: 56px; }
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.calc-inputs { display: flex; flex-direction: column; gap: 24px; }
+.calc-field label { display: block; font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.7); margin-bottom: 8px; }
+.calc-field select, .calc-field input[type="range"] { width: 100%; }
+.calc-field select {
+  padding: 12px 16px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.9); font-size: 0.9rem; cursor: pointer; outline: none;
+}
+.calc-field select:focus { border-color: var(--accent); }
+.range-wrap { display: flex; flex-direction: column; gap: 8px; }
+.range-row { display: flex; justify-content: space-between; align-items: center; }
+.range-val { font-size: 0.85rem; color: var(--accent); font-weight: 700; }
+input[type="range"] { -webkit-appearance: none; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.15); outline: none; cursor: pointer; }
+input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); border: 3px solid #0f2d1f; }
+.calc-results { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.calc-result-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px; }
+.calc-result-label { font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+.calc-result-val { font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; color: var(--accent); }
+.calc-result-unit { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+/* ─── Testimonials ─── */
+#testimonials { background: var(--section-bg); }
+.testimonials-wrap { position: relative; overflow: hidden; }
+.testimonials-track { display: flex; transition: transform 0.5s ease; }
+.testimonial-slide { min-width: 100%; padding: 0 16px; }
+.testimonial-card { background: var(--card-bg); border-radius: var(--radius-xl); padding: 48px; border: 1px solid var(--border); max-width: 800px; margin: 0 auto; text-align: center; }
+.testimonial-stars { color: #fbbf24; font-size: 1.1rem; margin-bottom: 24px; }
+.testimonial-text { font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; color: var(--text-main); line-height: 1.6; margin-bottom: 32px; font-style: italic; }
+.testimonial-author { display: flex; align-items: center; justify-content: center; gap: 16px; }
+.testimonial-avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid var(--green-200); }
+.testimonial-name { font-weight: 700; color: var(--text-main); }
+.testimonial-org { font-size: 0.82rem; color: var(--text-sub); }
+.testimonial-nav { display: flex; justify-content: center; gap: 12px; margin-top: 40px; }
+.t-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--border); cursor: pointer; transition: all var(--transition); border: none; }
+.t-dot.active { background: var(--green-500); width: 28px; border-radius: 5px; }
+
+/* ─── FAQ ─── */
+#faq { background: var(--card-bg); }
+.faq-list { max-width: 760px; margin: 56px auto 0; display: flex; flex-direction: column; gap: 12px; }
+.faq-item { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.faq-q { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; cursor: pointer; font-weight: 600; font-size: 0.95rem; color: var(--text-main); background: var(--card-bg); user-select: none; }
+.faq-q:hover { background: var(--green-50); }
+[data-theme="dark"] .faq-q:hover { background: rgba(91,227,125,0.05); }
+.faq-icon { color: var(--green-600); transition: transform var(--transition); flex-shrink: 0; }
+[data-theme="dark"] .faq-icon { color: var(--green-400); }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+.faq-a-inner { padding: 0 24px 20px; font-size: 0.9rem; color: var(--text-sub); line-height: 1.7; }
+.faq-item.open .faq-a { max-height: 200px; }
+
+/* ─── Contact ─── */
+#contact { background: var(--section-bg); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
+.contact-info { display: flex; flex-direction: column; gap: 24px; }
+.contact-item { display: flex; align-items: flex-start; gap: 16px; }
+.contact-item-icon { width: 48px; height: 48px; background: var(--green-100); color: var(--green-700); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+[data-theme="dark"] .contact-item-icon { background: rgba(34,197,94,0.15); color: var(--green-400); }
+.contact-item-title { font-weight: 600; font-size: 0.9rem; color: var(--text-main); margin-bottom: 2px; }
+.contact-item-val { font-size: 0.88rem; color: var(--text-sub); }
+.map-embed { margin-top: 24px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+.social-row { display: flex; gap: 12px; margin-top: 24px; }
+.social-btn { width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-sub); font-size: 0.95rem; transition: all var(--transition); text-decoration: none; }
+.social-btn:hover { border-color: var(--green-500); color: var(--green-600); background: var(--green-50); }
+.contact-form { background: var(--card-bg); border-radius: var(--radius-xl); padding: 40px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.form-group label { font-size: 0.85rem; font-weight: 600; color: var(--text-sub); }
+.form-group input, .form-group select, .form-group textarea {
+  padding: 13px 16px; border-radius: 12px; border: 1.5px solid var(--border);
+  background: var(--section-bg); color: var(--text-main); font-size: 0.9rem; font-family: var(--font-body); outline: none; transition: border var(--transition);
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--green-500); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-error { font-size: 0.78rem; color: #ef4444; display: none; }
+.form-group.error input, .form-group.error textarea { border-color: #ef4444; }
+.form-group.error .form-error { display: block; }
+.newsletter-wrap { background: var(--green-600); border-radius: var(--radius-lg); padding: 32px; margin-top: 24px; color: #fff; }
+.newsletter-wrap h4 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+.newsletter-wrap p { font-size: 0.85rem; opacity: 0.8; margin-bottom: 16px; }
+.newsletter-row { display: flex; gap: 8px; }
+.newsletter-row input { flex: 1; padding: 12px 16px; border-radius: 99px; border: none; outline: none; font-size: 0.9rem; }
+.newsletter-row button { padding: 12px 20px; border-radius: 99px; border: none; background: #fff; color: var(--green-700); font-weight: 700; cursor: pointer; white-space: nowrap; }
+
+/* ─── Chatbot ─── */
+#chat-btn {
+  position: fixed; bottom: 32px; right: 32px; z-index: 1500;
+  width: 60px; height: 60px; border-radius: 50%; border: none;
+  background: var(--green-600); color: #fff; font-size: 1.5rem;
+  cursor: pointer; box-shadow: 0 8px 24px rgba(22,163,74,0.5);
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition);
+}
+#chat-btn:hover { background: var(--green-700); transform: scale(1.1); }
+.chat-pulse { position: absolute; inset: -3px; border-radius: 50%; border: 2px solid var(--green-500); animation: chatPulse 2s ease infinite; }
+@keyframes chatPulse { 0%,100% { transform: scale(1); opacity: 0.7; } 50% { transform: scale(1.15); opacity: 0; } }
+#chatbot {
+  position: fixed; bottom: 106px; right: 32px; z-index: 1500;
+  width: 360px; height: 520px; border-radius: var(--radius-xl);
+  background: var(--card-bg); border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  display: flex; flex-direction: column;
+  transform: scale(0.85) translateY(20px); opacity: 0; visibility: hidden; transform-origin: bottom right;
+  transition: all var(--transition);
+}
+#chatbot.open { transform: scale(1) translateY(0); opacity: 1; visibility: visible; }
+.chat-head { background: linear-gradient(135deg, var(--green-700), var(--green-500)); padding: 16px 20px; border-radius: var(--radius-xl) var(--radius-xl) 0 0; color: #fff; display: flex; align-items: center; gap: 12px; }
+.chat-avatar { width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+.chat-head-name { font-weight: 700; font-size: 0.95rem; }
+.chat-head-status { font-size: 0.75rem; opacity: 0.8; display: flex; align-items: center; gap: 5px; }
+.chat-head-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #4ade80; display: inline-block; }
+.chat-close { margin-left: auto; background: rgba(255,255,255,0.15); border: none; color: #fff; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; }
+.chat-msgs { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.chat-msgs::-webkit-scrollbar { width: 4px; }
+.chat-msgs::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+.msg { max-width: 85%; padding: 11px 15px; border-radius: 16px; font-size: 0.85rem; line-height: 1.5; }
+.msg.bot { background: var(--section-bg); color: var(--text-main); border-radius: 4px 16px 16px 16px; }
+.msg.user { background: var(--green-600); color: #fff; border-radius: 16px 4px 16px 16px; align-self: flex-end; }
+.typing { display: flex; gap: 4px; align-items: center; padding: 12px 16px; }
+.typing span { width: 7px; height: 7px; border-radius: 50%; background: var(--gray-400); animation: typingDot 1.2s ease infinite; }
+.typing span:nth-child(2) { animation-delay: 0.2s; }
+.typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typingDot { 0%,80%,100% { transform: scale(0.6); opacity: 0.4; } 40% { transform: scale(1); opacity: 1; } }
+.chat-suggestions { padding: 8px 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+.chat-sug { padding: 6px 12px; border-radius: 99px; border: 1px solid var(--border); background: transparent; font-size: 0.75rem; cursor: pointer; color: var(--text-sub); transition: all var(--transition); }
+.chat-sug:hover { border-color: var(--green-500); color: var(--green-600); }
+.chat-input-wrap { padding: 12px 16px; border-top: 1px solid var(--border); display: flex; gap: 8px; }
+.chat-input { flex: 1; padding: 10px 14px; border-radius: 99px; border: 1.5px solid var(--border); background: var(--section-bg); color: var(--text-main); font-size: 0.85rem; outline: none; }
+.chat-input:focus { border-color: var(--green-500); }
+.chat-send { width: 38px; height: 38px; border-radius: 50%; background: var(--green-600); color: #fff; border: none; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; }
+
+/* ─── Footer ─── */
+footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 72px 0 32px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
+.footer-brand { }
+.footer-logo { font-family: var(--font-display); font-size: 1.6rem; font-weight: 900; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.footer-desc { font-size: 0.88rem; line-height: 1.7; margin-bottom: 20px; }
+.footer-h { font-weight: 700; font-size: 0.85rem; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.88rem; transition: color var(--transition); }
+.footer-links a:hover { color: var(--accent); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-quote { font-family: var(--font-display); font-style: italic; font-size: 0.9rem; color: rgba(255,255,255,0.4); }
+.footer-copy { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+
+/* ─── Scroll top ─── */
+#scroll-top {
+  position: fixed; bottom: 32px; left: 32px; z-index: 1500;
+  width: 48px; height: 48px; border-radius: 50%; background: var(--card-bg);
+  border: 1.5px solid var(--border); color: var(--text-sub); font-size: 1.1rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transform: translateY(10px);
+  transition: all var(--transition);
+}
+#scroll-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+#scroll-top:hover { background: var(--green-600); color: #fff; border-color: var(--green-600); }
+
+/* ─── Reveal animations ─── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ─── Mobile Nav ─── */
+#mobile-menu {
+  position: fixed; top: 72px; left: 0; right: 0; z-index: 999;
+  background: var(--nav-bg); backdrop-filter: blur(20px);
+  padding: 20px; border-bottom: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 4px;
+  transform: translateY(-100%); opacity: 0; visibility: hidden; transition: all var(--transition);
+}
+#mobile-menu.open { transform: translateY(0); opacity: 1; visibility: visible; }
+.mobile-link { padding: 12px 16px; border-radius: 12px; text-decoration: none; color: var(--text-main); font-weight: 500; display: block; transition: all var(--transition); }
+.mobile-link:hover { background: var(--green-50); color: var(--green-700); }
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .calc-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .about-badge-float { right: 0; bottom: 0; }
+  #chatbot { width: calc(100vw - 32px); right: 16px; bottom: 90px; }
+  .chat-btn { right: 16px; bottom: 16px; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .calc-inner { padding: 32px 24px; }
+  .calc-results { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .hero-stats { grid-template-columns: 1fr; }
+  .hero-btns { flex-direction: column; }
+  .calc-results { grid-template-columns: 1fr; }
+  .testimonial-card { padding: 32px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-logo">Eco<span>Build</span></div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<!-- Search Overlay -->
+<div id="search-overlay" role="dialog" aria-label="Search">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <i class="fas fa-search" style="color:var(--green-600)"></i>
+      <input type="text" id="search-input" placeholder="Search services, blog, materials..." autocomplete="off">
+      <button onclick="closeSearch()" style="background:none;border:none;cursor:pointer;color:var(--text-sub)"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <div class="nav-logo-icon"><i class="fas fa-leaf"></i></div>
+        EcoBuild
+      </a>
+      <div class="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#materials" class="nav-link">Materials</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-btn" onclick="openSearch()" title="Search"><i class="fas fa-search"></i></button>
+        <button class="icon-btn" id="theme-toggle" title="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <a href="#contact" class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem;">Get Consultation</a>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu">
+  <a href="#hero" class="mobile-link" onclick="closeMobile()">Home</a>
+  <a href="#about" class="mobile-link" onclick="closeMobile()">About</a>
+  <a href="#services" class="mobile-link" onclick="closeMobile()">Services</a>
+  <a href="#materials" class="mobile-link" onclick="closeMobile()">Materials</a>
+  <a href="#projects" class="mobile-link" onclick="closeMobile()">Projects</a>
+  <a href="#blog" class="mobile-link" onclick="closeMobile()">Blog</a>
+  <a href="#contact" class="mobile-link" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-circle"></i> LEED & GRIHA Certified Consultants</div>
+      <h1 class="hero-title">Building a <span>Sustainable</span> Future</h1>
+      <p class="hero-sub">EcoBuild Consultancy transforms vision into eco-conscious reality. From green design to energy audits, we help you build smarter, cleaner, and more profitably.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-leaf"></i> Get Consultation</a>
+        <a href="#services" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.4)"><i class="fas fa-arrow-right"></i> Explore Services</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num" data-count="850">0</div>
+          <div class="hero-stat-label">Green Projects Completed</div>
+        </div>
+        <div>
+          <div class="hero-stat-num" data-count="94">0<span>%</span></div>
+          <div class="hero-stat-label">Client Satisfaction Rate</div>
+        </div>
+        <div>
+          <div class="hero-stat-num" data-count="40">0<span>%</span></div>
+          <div class="hero-stat-label">Average Energy Savings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-arrow"><div class="scroll-dot"></div></div>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- Stats -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-icon"><i class="fas fa-solar-panel"></i></div>
+        <div class="stat-num" data-count="12500">0</div>
+        <div class="stat-label">kWh Energy Saved Annually</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-icon"><i class="fas fa-tree"></i></div>
+        <div class="stat-num" data-count="320">0</div>
+        <div class="stat-label">Tons of Carbon Offset</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-icon"><i class="fas fa-droplet"></i></div>
+        <div class="stat-num" data-count="45">0<span style="font-size:1.5rem">%</span></div>
+        <div class="stat-label">Water Usage Reduction</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-icon"><i class="fas fa-award"></i></div>
+        <div class="stat-num" data-count="18">0</div>
+        <div class="stat-label">Industry Awards Won</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap reveal">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80" alt="Sustainable building" class="about-img" loading="lazy">
+        <div class="about-badge-float">
+          <div class="about-badge-num">12+</div>
+          <div class="about-badge-text">Years of Green Excellence</div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="section-label">About EcoBuild</div>
+        <h2 class="section-title">Champions of Conscious Construction</h2>
+        <p class="section-sub">We believe every building has the potential to give back to the planet. Our team of certified green architects, engineers, and sustainability advisors work together to make that vision a reality for clients across India and beyond.</p>
+        <div class="about-features">
+          <div class="about-feat">
+            <div class="about-feat-icon"><i class="fas fa-bullseye"></i></div>
+            <div>
+              <div class="about-feat-title">Our Mission</div>
+              <div class="about-feat-desc">Accelerate the transition to sustainable construction by making green building accessible, affordable, and aspirational for every stakeholder.</div>
+            </div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon"><i class="fas fa-eye"></i></div>
+            <div>
+              <div class="about-feat-title">Our Vision</div>
+              <div class="about-feat-desc">A world where every structure built contributes positively to its ecosystem, community, and the global climate agenda.</div>
+            </div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon"><i class="fas fa-shield-halved"></i></div>
+            <div>
+              <div class="about-feat-title">Our Values</div>
+              <div class="about-feat-desc">Integrity in every assessment, innovation in every design, and impact measured in real environmental outcomes.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team -->
+    <div class="team-section">
+      <div class="section-label">Our Team</div>
+      <h2 class="section-title">Meet the Experts</h2>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&q=80" alt="Arjun Nair" class="team-avatar">
+          <div class="team-name">Arjun Nair</div>
+          <div class="team-role">Founder & Green Architect</div>
+          <div class="team-social">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="team-card reveal reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&q=80" alt="Priya Menon" class="team-avatar">
+          <div class="team-name">Priya Menon</div>
+          <div class="team-role">Lead Energy Consultant</div>
+          <div class="team-social">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="team-card reveal reveal-delay-2">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&q=80" alt="Rahul Krishnan" class="team-avatar">
+          <div class="team-name">Rahul Krishnan</div>
+          <div class="team-role">LEED Certification Expert</div>
+          <div class="team-social">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="team-card reveal reveal-delay-3">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&q=80" alt="Kavya Suresh" class="team-avatar">
+          <div class="team-name">Kavya Suresh</div>
+          <div class="team-role">Water Conservation Specialist</div>
+          <div class="team-social">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Comprehensive Green Building Services</h2>
+    <p class="section-sub">From concept to certification, we guide your project through every phase of sustainable development.</p>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+        <div class="service-title">Green Building Design</div>
+        <div class="service-desc">Biophilic, energy-passive architectural designs that harmonize with nature. We integrate daylighting, natural ventilation, and living walls from the ground up.</div>
+        <a href="#contact" class="service-link">Get Started <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon"><i class="fas fa-bolt"></i></div>
+        <div class="service-title">Energy Audit</div>
+        <div class="service-desc">Comprehensive on-site and remote energy audits that identify inefficiencies, quantify losses, and prioritize improvements with measurable ROI timelines.</div>
+        <a href="#contact" class="service-link">Get Started <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon"><i class="fas fa-solar-panel"></i></div>
+        <div class="service-title">Solar Panel Consultation</div>
+        <div class="service-desc">Site assessment, system sizing, vendor selection, and financial modeling for solar installations across residential, commercial, and industrial projects.</div>
+        <a href="#contact" class="service-link">Get Started <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-droplet"></i></div>
+        <div class="service-title">Water Conservation Planning</div>
+        <div class="service-desc">Rainwater harvesting design, greywater recycling systems, xeriscaping, and low-flow fixture planning to reduce consumption by up to 60%.</div>
+        <a href="#contact" class="service-link">Get Started <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon"><i class="fas fa-recycle"></i></div>
+        <div class="service-title">Waste Management Solutions</div>
+        <div class="service-desc">Construction waste diversion plans, deconstruction audits, and on-site composting systems that push your project toward zero-waste certification.</div>
+        <a href="#contact" class="service-link">Get Started <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon"><i class="fas fa-certificate"></i></div>
+        <div class="service-title">LEED / GRIHA Certification</div>
+        <div class="service-desc">End-to-end support for India's GRIHA and IGBC/LEED rating systems — from credit strategy and documentation to final submission and audit preparation.</div>
+        <a href="#contact" class="service-link">Get Started <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Green Materials -->
+<section id="materials" class="section">
+  <div class="container">
+    <div class="section-label">Eco Materials</div>
+    <h2 class="section-title">Sustainable Building Materials</h2>
+    <p class="section-sub">Carefully curated materials that reduce environmental impact without compromising on quality, aesthetics, or durability.</p>
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-btn active" data-cat="all">All Materials</button>
+      <button class="filter-btn" data-cat="structural">Structural</button>
+      <button class="filter-btn" data-cat="insulation">Insulation</button>
+      <button class="filter-btn" data-cat="finish">Finishes</button>
+      <button class="filter-btn" data-cat="energy">Energy</button>
+      <button class="filter-btn" data-cat="water">Water</button>
+    </div>
+    <div class="materials-grid" id="materials-grid"></div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-label">Our Work</div>
+    <h2 class="section-title">Completed Green Projects</h2>
+    <p class="section-sub">Real buildings, real impact. Explore our portfolio of certified sustainable structures across India.</p>
+    <div class="projects-grid" id="projects-grid"></div>
+  </div>
+</section>
+
+<!-- Blog -->
+<section id="blog" class="section">
+  <div class="container">
+    <div class="section-label">Knowledge Hub</div>
+    <h2 class="section-title">Green Building Insights</h2>
+    <div class="blog-cats" id="blog-cats">
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="solar">Solar</button>
+      <button class="filter-btn" data-cat="water">Water</button>
+      <button class="filter-btn" data-cat="materials">Materials</button>
+      <button class="filter-btn" data-cat="certification">Certification</button>
+    </div>
+    <div class="blog-grid" id="blog-grid"></div>
+  </div>
+</section>
+
+<!-- Calculator -->
+<section id="calculator">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="section-label" style="color:var(--accent)">Cost Estimator</div>
+      <h2 class="section-title" style="color:#fff">Green Building Cost Calculator</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.6);margin:0 auto">Get instant estimates for solar, water savings, energy reduction, and carbon footprint impact.</p>
+    </div>
+    <div class="calc-inner">
+      <div class="calc-grid">
+        <div class="calc-inputs">
+          <div class="calc-field">
+            <label>Building Type</label>
+            <select id="calc-type" onchange="calcUpdate()">
+              <option value="residential">Residential</option>
+              <option value="commercial">Commercial</option>
+              <option value="industrial">Industrial</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label>Roof Area (sq ft)</label>
+            <div class="range-wrap">
+              <div class="range-row">
+                <span style="font-size:0.82rem;color:rgba(255,255,255,0.5)">500</span>
+                <span class="range-val" id="area-val">2,500 sq ft</span>
+                <span style="font-size:0.82rem;color:rgba(255,255,255,0.5)">10,000</span>
+              </div>
+              <input type="range" id="calc-area" min="500" max="10000" value="2500" step="100" oninput="calcUpdate()">
+            </div>
+          </div>
+          <div class="calc-field">
+            <label>Monthly Electricity Bill (₹)</label>
+            <div class="range-wrap">
+              <div class="range-row">
+                <span style="font-size:0.82rem;color:rgba(255,255,255,0.5)">₹1,000</span>
+                <span class="range-val" id="bill-val">₹8,000</span>
+                <span style="font-size:0.82rem;color:rgba(255,255,255,0.5)">₹50,000</span>
+              </div>
+              <input type="range" id="calc-bill" min="1000" max="50000" value="8000" step="500" oninput="calcUpdate()">
+            </div>
+          </div>
+          <div class="calc-field">
+            <label>Daily Water Usage (litres)</label>
+            <div class="range-wrap">
+              <div class="range-row">
+                <span style="font-size:0.82rem;color:rgba(255,255,255,0.5)">100L</span>
+                <span class="range-val" id="water-val">500 L/day</span>
+                <span style="font-size:0.82rem;color:rgba(255,255,255,0.5)">5,000L</span>
+              </div>
+              <input type="range" id="calc-water" min="100" max="5000" value="500" step="50" oninput="calcUpdate()">
+            </div>
+          </div>
+          <div class="calc-field">
+            <label>Green Features to Include</label>
+            <select id="calc-features" onchange="calcUpdate()">
+              <option value="solar">Solar Only</option>
+              <option value="water">Water Systems Only</option>
+              <option value="both" selected>Solar + Water + Insulation</option>
+              <option value="full">Full Green Package</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:0.85rem;color:rgba(255,255,255,0.55);margin-bottom:20px;">Estimated Costs & Savings</p>
+          <div class="calc-results">
+            <div class="calc-result-card">
+              <div class="calc-result-label">Solar Installation</div>
+              <div class="calc-result-val" id="r-solar">₹0</div>
+              <div class="calc-result-unit">one-time investment</div>
+            </div>
+            <div class="calc-result-card">
+              <div class="calc-result-label">Water System</div>
+              <div class="calc-result-val" id="r-water">₹0</div>
+              <div class="calc-result-unit">one-time investment</div>
+            </div>
+            <div class="calc-result-card">
+              <div class="calc-result-label">Annual Energy Savings</div>
+              <div class="calc-result-val" id="r-energy">₹0</div>
+              <div class="calc-result-unit">per year savings</div>
+            </div>
+            <div class="calc-result-card">
+              <div class="calc-result-label">Carbon Reduction</div>
+              <div class="calc-result-val" id="r-carbon">0 kg</div>
+              <div class="calc-result-unit">CO₂ per year</div>
+            </div>
+            <div class="calc-result-card">
+              <div class="calc-result-label">Payback Period</div>
+              <div class="calc-result-val" id="r-payback">0 yrs</div>
+              <div class="calc-result-unit">estimated ROI</div>
+            </div>
+            <div class="calc-result-card">
+              <div class="calc-result-label">Water Saved</div>
+              <div class="calc-result-val" id="r-watersave">0 L</div>
+              <div class="calc-result-unit">per year</div>
+            </div>
+          </div>
+          <div style="margin-top:24px;padding:16px;background:rgba(91,227,125,0.1);border-radius:12px;border:1px solid rgba(91,227,125,0.2);">
+            <p style="font-size:0.82rem;color:rgba(255,255,255,0.6)">* Estimates based on average Tamil Nadu solar irradiance (5.5 kWh/m²/day) and standard installation costs. Actual figures may vary.</p>
+          </div>
+          <a href="#contact" class="btn btn-primary" style="margin-top:24px;width:100%;justify-content:center">
+            <i class="fas fa-leaf"></i> Get Detailed Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Client Stories</div>
+    <h2 class="section-title" style="text-align:center">What Our Clients Say</h2>
+    <div class="testimonials-wrap" style="margin-top:48px">
+      <div class="testimonials-track" id="t-track">
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"EcoBuild transformed our office complex into a LEED Gold certified building. Our energy costs dropped by 42% in the first year alone. The team's expertise is unmatched."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&q=80" alt="Vikram Shah" class="testimonial-avatar">
+              <div>
+                <div class="testimonial-name">Vikram Shah</div>
+                <div class="testimonial-org">CEO, TechNova Solutions, Bengaluru</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"The rainwater harvesting system they designed has made our housing society completely water-independent during monsoon season. A truly life-changing project."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=100&h=100&fit=crop&q=80" alt="Anita Desai" class="testimonial-avatar">
+              <div>
+                <div class="testimonial-name">Anita Desai</div>
+                <div class="testimonial-org">President, Green Palms Society, Pune</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"From the initial energy audit to final GRIHA 4-star certification, EcoBuild held our hand at every step. Our hospital now sets the benchmark for green healthcare in Tamil Nadu."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop&q=80" alt="Dr. Ramesh Kumar" class="testimonial-avatar">
+              <div>
+                <div class="testimonial-name">Dr. Ramesh Kumar</div>
+                <div class="testimonial-org">Director, Greenfields Hospital, Salem</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-nav" id="t-nav">
+        <button class="t-dot active" onclick="goToSlide(0)"></button>
+        <button class="t-dot" onclick="goToSlide(1)"></button>
+        <button class="t-dot" onclick="goToSlide(2)"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="section-label" style="text-align:center">FAQ</div>
+    <h2 class="section-title" style="text-align:center">Frequently Asked Questions</h2>
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-title">Start Your Green Journey Today</h2>
+    <div class="contact-grid" style="margin-top:56px">
+      <div>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fas fa-location-dot"></i></div>
+            <div>
+              <div class="contact-item-title">Office Address</div>
+              <div class="contact-item-val">42, Green Valley Tech Park, Omalur Road, Salem, Tamil Nadu 636002</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <div class="contact-item-title">Phone</div>
+              <div class="contact-item-val">+91 98765 43210</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div class="contact-item-title">Email</div>
+              <div class="contact-item-val">hello@ecobuildconsultancy.in</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <div class="contact-item-title">Working Hours</div>
+              <div class="contact-item-val">Mon – Sat: 9:00 AM – 6:30 PM IST</div>
+            </div>
+          </div>
+        </div>
+        <div class="social-row">
+          <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62680.50827765756!2d78.12041!3d11.6643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1e06cf83b31%3A0xb9c1a50b54843993!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1620000000000" width="100%" height="220" style="border:0;display:block" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="newsletter-wrap">
+          <h4>Stay Updated 🌿</h4>
+          <p>Subscribe to our newsletter for the latest green building tips, project highlights, and sustainability news.</p>
+          <div class="newsletter-row">
+            <input type="email" id="newsletter-email" placeholder="your@email.com">
+            <button onclick="subscribeNewsletter()">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--text-main);margin-bottom:28px;">Send Us a Message</h3>
+        <div class="form-row">
+          <div class="form-group" id="fg-name">
+            <label>Full Name *</label>
+            <input type="text" id="f-name" placeholder="Your full name">
+            <span class="form-error">Please enter your name</span>
+          </div>
+          <div class="form-group" id="fg-email">
+            <label>Email Address *</label>
+            <input type="email" id="f-email" placeholder="your@email.com">
+            <span class="form-error">Please enter a valid email</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="f-phone" placeholder="+91 98765 43210">
+          </div>
+          <div class="form-group" id="fg-service">
+            <label>Service Interested In *</label>
+            <select id="f-service">
+              <option value="">Select a service</option>
+              <option>Green Building Design</option>
+              <option>Energy Audit</option>
+              <option>Solar Consultation</option>
+              <option>Water Conservation</option>
+              <option>Waste Management</option>
+              <option>LEED/GRIHA Certification</option>
+            </select>
+            <span class="form-error">Please select a service</span>
+          </div>
+        </div>
+        <div class="form-group" id="fg-msg">
+          <label>Message *</label>
+          <textarea id="f-msg" placeholder="Tell us about your project..."></textarea>
+          <span class="form-error">Please enter your message</span>
+        </div>
+        <button class="btn btn-primary" onclick="submitForm()" style="width:100%;justify-content:center;padding:16px">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+        <div id="form-success" style="display:none;margin-top:16px;padding:16px;background:var(--green-100);border-radius:12px;color:var(--green-800);font-weight:600;text-align:center;">
+          ✅ Message sent! We'll get back to you within 24 hours.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><i class="fas fa-leaf" style="font-size:1.2rem"></i> EcoBuild Consultancy</div>
+        <p class="footer-desc">India's premier green building consultancy, dedicated to making sustainable construction the standard — not the exception.</p>
+        <div style="display:flex;gap:10px">
+          <a href="#" class="social-btn" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.5)"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-btn" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.5)"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-btn" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.5)"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-h">Services</div>
+        <ul class="footer-links">
+          <li><a href="#services">Green Building Design</a></li>
+          <li><a href="#services">Energy Audit</a></li>
+          <li><a href="#services">Solar Consultation</a></li>
+          <li><a href="#services">Water Conservation</a></li>
+          <li><a href="#services">LEED / GRIHA</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-h">Company</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#calculator">Calculator</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-h">Certifications</div>
+        <ul class="footer-links">
+          <li><a href="#">LEED Certified</a></li>
+          <li><a href="#">GRIHA Partner</a></li>
+          <li><a href="#">IGBC Member</a></li>
+          <li><a href="#">BEE Accredited</a></li>
+          <li><a href="#">ISO 14001</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-quote">"The Earth does not belong to us, we belong to the Earth." — Chief Seattle</div>
+      <div class="footer-copy">© 2025 EcoBuild Consultancy. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Chatbot -->
+<button id="chat-btn" onclick="toggleChat()" title="Chat with EcoBot">
+  <div class="chat-pulse"></div>
+  <i class="fas fa-leaf" id="chat-icon"></i>
+</button>
+
+<div id="chatbot">
+  <div class="chat-head">
+    <div class="chat-avatar">🌱</div>
+    <div>
+      <div class="chat-head-name">EcoBot</div>
+      <div class="chat-head-status">Online — here to help</div>
+    </div>
+    <button class="chat-close" onclick="toggleChat()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="chat-msgs" id="chat-msgs"></div>
+  <div class="chat-suggestions" id="chat-sugs">
+    <button class="chat-sug" onclick="askBot(this.textContent)">Solar energy</button>
+    <button class="chat-sug" onclick="askBot(this.textContent)">Rainwater harvesting</button>
+    <button class="chat-sug" onclick="askBot(this.textContent)">Green roofs</button>
+    <button class="chat-sug" onclick="askBot(this.textContent)">LEED certification</button>
+    <button class="chat-sug" onclick="askBot(this.textContent)">Energy savings</button>
+  </div>
+  <div class="chat-input-wrap">
+    <input type="text" class="chat-input" id="chat-in" placeholder="Type a question..." onkeydown="if(event.key==='Enter')sendChat()">
+    <button class="chat-send" onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+
+<!-- Scroll to top -->
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Modal -->
+<div id="modal-overlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <img id="modal-img" src="" alt="" class="modal-img">
+    <div class="modal-body">
+      <div id="modal-tag" class="tag" style="margin-bottom:16px"></div>
+      <h3 id="modal-title" style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--text-main);margin-bottom:12px;"></h3>
+      <p id="modal-loc" style="color:var(--text-sub);font-size:0.88rem;margin-bottom:16px;"></p>
+      <p id="modal-desc" style="color:var(--text-sub);line-height:1.7;font-size:0.92rem;"></p>
+      <div id="modal-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── Data ───
+const materials = [
+  { name: 'Engineered Bamboo', cat: 'structural', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=70', desc: 'Stronger than steel by weight, fully renewable, sequesters CO₂. Ideal for beams, floors, and facades.', rating: 5 },
+  { name: 'Recycled Steel', cat: 'structural', img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=70', desc: 'Using 75% less energy to produce than virgin steel. Perfect for structural frames and reinforcement.', rating: 4 },
+  { name: 'Fly Ash Bricks', cat: 'structural', img: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=400&q=70', desc: 'Made from industrial waste, 30% lighter than clay bricks with superior thermal insulation.', rating: 4 },
+  { name: 'Hempcrete', cat: 'insulation', img: 'https://images.unsplash.com/photo-1549558549-415fe4c37b60?w=400&q=70', desc: 'Breathable, non-toxic insulation made from hemp hurds and lime. Naturally pest and mold resistant.', rating: 5 },
+  { name: 'Aerogel Panels', cat: 'insulation', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=70', desc: 'Ultra-low thermal conductivity — 2–5× better than conventional foam insulation in the same thickness.', rating: 5 },
+  { name: 'Low-VOC Paint', cat: 'finish', img: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&q=70', desc: 'Near-zero volatile organic compound emissions, protecting indoor air quality and occupant health.', rating: 4 },
+  { name: 'Recycled Glass Tiles', cat: 'finish', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=70', desc: 'Made from 100% post-consumer glass. Durable, beautiful, and diverts waste from landfills.', rating: 4 },
+  { name: 'Solar Glass (BIPV)', cat: 'energy', img: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&q=70', desc: 'Building-integrated photovoltaic glass that generates power while functioning as a structural façade element.', rating: 5 },
+  { name: 'Phase Change Materials', cat: 'energy', img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=70', desc: 'Stores and releases thermal energy to stabilize indoor temperature, reducing HVAC load by up to 30%.', rating: 4 },
+  { name: 'Pervious Concrete', cat: 'water', img: 'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=400&q=70', desc: 'Allows stormwater to filter through to the ground, reducing runoff by up to 70% and recharging aquifers.', rating: 5 },
+  { name: 'Recycled Plastic Lumber', cat: 'structural', img: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=400&q=70', desc: 'Diverts plastic waste into durable construction material for decking, fencing, and cladding.', rating: 3 },
+  { name: 'Mycelium Insulation', cat: 'insulation', img: 'https://images.unsplash.com/photo-1549558549-415fe4c37b60?w=400&q=70', desc: 'Grown from mushroom roots, 100% biodegradable, comparable R-value to polystyrene foam.', rating: 5 },
+];
+
+const catColors = { structural:'#166534,#dcfce7', insulation:'#1e40af,#dbeafe', finish:'#7e22ce,#f3e8ff', energy:'#b45309,#fef3c7', water:'#0e7490,#cffafe' };
+
+const projects = [
+  { title: 'SolarEdge Corporate Campus', loc: 'Chennai', cat: 'LEED Gold', img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=75', desc: 'A 150,000 sq ft corporate campus featuring 1,200 rooftop solar panels, rainwater recycling, and living walls. Achieved 48% energy reduction and LEED Gold certification.', stats: [['₹12 Cr','Total Investment'],['48%','Energy Saved'],['LEED Gold','Rating']] },
+  { title: 'Verdant Heights Residences', loc: 'Coimbatore', cat: 'GRIHA 4-Star', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=75', desc: '220-unit residential complex with passive cooling design, greywater recycling, and an on-site biogas plant serving all cooking needs for residents.', stats: [['220','Units'],['60%','Water Saved'],['GRIHA ★★★★','Rating']] },
+  { title: 'BioTech Innovation Hub', loc: 'Bengaluru', cat: 'Net Zero', img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=75', desc: 'India\'s first fully net-zero research facility, generating 115% of its energy needs from on-site renewables. Features 6,000 sq ft of green roof and a constructed wetland for wastewater treatment.', stats: [['Net Zero','Energy',''],['115%','Energy Gen.'],['6,000 sq ft','Green Roof']] },
+  { title: 'Eco-School of Excellence', loc: 'Salem', cat: 'GRIHA 5-Star', img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=75', desc: 'A K-12 school designed entirely around environmental education, with solar trees, food forests, composting, and a rain garden that doubles as outdoor science labs.', stats: [['5-Star','GRIHA Rating'],['₹0','Electricity Bill'],['2 acres','Food Forest']] },
+  { title: 'Green Logistics Warehouse', loc: 'Hosur', cat: 'Green Roof', img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=75', desc: 'A 5-acre logistics facility with cool roof technology, LED sensor lighting, and EV charging infrastructure that cut operational carbon by 55%.', stats: [['55%','Carbon Cut'],['200 EVs','Charging Pts'],['5 acres','Site Area']] },
+  { title: 'Heritage Hotel Retrofit', loc: 'Ooty', cat: 'Energy Retrofit', img: 'https://images.unsplash.com/photo-1455587734955-081b22074882?w=600&q=75', desc: 'A complete green retrofit of a 1920s colonial-era hotel, preserving heritage character while installing modern energy systems, achieving a 65% energy bill reduction.', stats: [['65%','Bill Reduced'],['1920s','Heritage Bldg'],['4 Stars','Energy Rating']] },
+];
+
+const blogs = [
+  { title: 'How Solar Glass Is Redefining Skyscraper Facades in India', cat: 'solar', date: 'May 2, 2025', img: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&q=70', excerpt: 'Building-integrated photovoltaics (BIPV) are no longer just for rooftops. Discover how India\'s tallest buildings are generating power from their very walls.' },
+  { title: 'Rainwater Harvesting: A Complete Guide for Indian Homeowners', cat: 'water', date: 'Apr 18, 2025', img: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=500&q=70', excerpt: 'From rooftop catchment to first-flush diverters, everything you need to know about setting up a compliant, cost-effective rainwater system in Tamil Nadu.' },
+  { title: 'Bamboo vs Steel: The Surprising Structural Showdown', cat: 'materials', date: 'Apr 5, 2025', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=70', excerpt: 'Engineered bamboo now rivals steel in tensile strength, but costs 60% less and sequesters carbon. We break down when to use each material.' },
+  { title: 'LEED vs GRIHA: Which Certification Is Right for Your Project?', cat: 'certification', date: 'Mar 22, 2025', img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&q=70', excerpt: 'Both are globally respected — but they evaluate buildings differently. We help you choose the right path for your budget, timeline, and project type.' },
+  { title: '5 Passive Cooling Strategies That Work in Tamil Nadu\'s Climate', cat: 'materials', date: 'Mar 10, 2025', img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=500&q=70', excerpt: 'Before you install another AC unit, consider these time-tested and science-backed passive design strategies that require zero operating costs.' },
+  { title: 'India\'s Solar Boom: What the 500 GW Target Means for Green Buildings', cat: 'solar', date: 'Feb 28, 2025', img: 'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=500&q=70', excerpt: 'As India races toward its 2030 renewable energy target, building owners are uniquely positioned to capitalize on falling solar panel prices and new subsidies.' },
+];
+
+const faqs = [
+  { q: 'How much does green building consultation cost?', a: 'Our consultation fees start at ₹15,000 for an initial energy audit for residential properties. Comprehensive project services are quoted after a free 30-minute discovery call based on project scope, size, and target certification level.' },
+  { q: 'What is the difference between LEED and GRIHA certification?', a: 'LEED (Leadership in Energy and Environmental Design) is an internationally recognized US-origin standard adopted in India via IGBC. GRIHA (Green Rating for Integrated Habitat Assessment) is India\'s national system, often better aligned with the Indian climate, materials, and building practices.' },
+  { q: 'How long does LEED/GRIHA certification take?', a: 'GRIHA certification typically takes 12–18 months from design phase to final rating. LEED timelines are similar. Much of the timeline depends on documentation completeness and the speed of review by the certifying body.' },
+  { q: 'Can existing buildings be retrofitted for green certification?', a: 'Yes. Existing buildings can pursue LEED O+M (Operations + Maintenance) or GRIHA for Existing Buildings. We have successfully retrofitted buildings ranging from 10-year-old offices to century-old heritage structures.' },
+  { q: 'What is the typical ROI on solar panel installation?', a: 'In Tamil Nadu, with average solar irradiance of 5.5 kWh/m²/day and current electricity tariffs, most systems pay back within 4–6 years, generating free electricity for 20+ years thereafter. Rooftop solar with net metering can generate income by selling surplus power.' },
+  { q: 'Do you work only in Tamil Nadu?', a: 'Our headquarters is in Salem, Tamil Nadu, but we have completed projects across South India including Karnataka, Kerala, Andhra Pradesh, and Telangana. We offer remote audits and consultation for projects across India.' },
+];
+
+const searchData = [
+  { title: 'Green Building Design', cat: 'Service', href: '#services' },
+  { title: 'Energy Audit', cat: 'Service', href: '#services' },
+  { title: 'Solar Panel Consultation', cat: 'Service', href: '#services' },
+  { title: 'Water Conservation Planning', cat: 'Service', href: '#services' },
+  { title: 'LEED / GRIHA Certification', cat: 'Service', href: '#services' },
+  { title: 'Waste Management Solutions', cat: 'Service', href: '#services' },
+  { title: 'Bamboo', cat: 'Material', href: '#materials' },
+  { title: 'Recycled Steel', cat: 'Material', href: '#materials' },
+  { title: 'Solar Glass', cat: 'Material', href: '#materials' },
+  { title: 'Fly Ash Bricks', cat: 'Material', href: '#materials' },
+  { title: 'Low-VOC Paint', cat: 'Material', href: '#materials' },
+  { title: 'Hempcrete', cat: 'Material', href: '#materials' },
+  { title: 'SolarEdge Corporate Campus', cat: 'Project', href: '#projects' },
+  { title: 'Verdant Heights Residences', cat: 'Project', href: '#projects' },
+  { title: 'Net Zero BioTech Hub', cat: 'Project', href: '#projects' },
+  { title: 'How Solar Glass Is Redefining Skyscrapers', cat: 'Blog', href: '#blog' },
+  { title: 'Rainwater Harvesting Guide', cat: 'Blog', href: '#blog' },
+  { title: 'LEED vs GRIHA', cat: 'Blog', href: '#blog' },
+  { title: 'Green Building Cost Calculator', cat: 'Tool', href: '#calculator' },
+  { title: 'About EcoBuild', cat: 'Page', href: '#about' },
+  { title: 'Contact Us', cat: 'Page', href: '#contact' },
+];
+
+const botAnswers = {
+  solar: "☀️ <strong>Solar Energy:</strong> We provide full solar consultation including site assessment, system sizing (kWp), financial modeling, and vendor management. In Tamil Nadu, a 5kWp system costs approximately ₹2.5–3.2 lakhs and pays back in 4–5 years via net metering.",
+  rainwater: "💧 <strong>Rainwater Harvesting:</strong> We design rooftop catchment systems, first-flush diverters, storage tanks, and filtration for potable use. A typical 200 sq m roof in Salem can capture 120,000+ litres annually, covering 40–60% of household water needs.",
+  "green roof": "🌿 <strong>Green Roofs:</strong> We offer extensive (lightweight, 10–20cm soil) and intensive (deep, garden-style) green roof design. Benefits include: 30–40% reduction in cooling load, stormwater retention, and increased roof lifespan by 2–3x.",
+  rooftop: "🌿 <strong>Green Roofs:</strong> We offer extensive (lightweight, 10–20cm soil) and intensive (deep, garden-style) green roof design. Benefits include: 30–40% reduction in cooling load, stormwater retention, and increased roof lifespan by 2–3x.",
+  "sustainable materials": "🧱 <strong>Sustainable Materials:</strong> We recommend and source bamboo, fly ash bricks, recycled steel, hempcrete, low-VOC paints, and BIPV solar glass. All materials are locally sourced where possible to minimize embodied carbon.",
+  leed: "🏅 <strong>LEED Certification:</strong> LEED (Leadership in Energy & Environmental Design) evaluates buildings on energy, water, materials, indoor quality, and innovation. We guide projects from LEED Certified (40 pts) through Silver, Gold, and Platinum (80+ pts).",
+  griha: "🏅 <strong>GRIHA Certification:</strong> India's national green building standard evaluates 34 criteria across site, energy, water, materials, and health. We've helped projects achieve 3, 4, and 5-star GRIHA ratings across South India.",
+  energy: "⚡ <strong>Energy Efficiency:</strong> Our audits identify inefficiencies in HVAC, lighting, envelope, and equipment. Typical recommendations yield 25–45% energy savings. We also design passive cooling, daylighting, and thermal mass strategies that need zero operating energy.",
+  cost: "💰 <strong>Cost & ROI:</strong> Green buildings typically cost 2–7% more upfront but save 20–50% in operating costs annually. Our Cost Calculator above gives instant estimates. Most projects achieve full payback within 5–8 years, then generate net savings for decades.",
+  contact: "📞 <strong>Contact Us:</strong> Reach us at +91 98765 43210 or hello@ecobuildconsultancy.in, Monday–Saturday 9am–6:30pm IST. You can also use the Contact form on this page to get a free consultation.",
+  hello: "👋 Hello there! I'm EcoBot 🌱 Ask me about solar energy, rainwater harvesting, green roofs, sustainable materials, LEED/GRIHA certification, or energy savings. How can I help?",
+  hi: "👋 Hello there! I'm EcoBot 🌱 Ask me about solar energy, rainwater harvesting, green roofs, sustainable materials, LEED/GRIHA certification, or energy savings. How can I help?",
+};
+
+// ─── Init ───
+window.addEventListener('load', () => {
+  setTimeout(() => { document.getElementById('loader').classList.add('done'); }, 1600);
+  renderParticles();
+  renderMaterials('all');
+  renderProjects();
+  renderBlogs('all');
+  renderFAQs();
+  initCounters();
+  calcUpdate();
+  initReveal();
+  initTestimonials();
+  setTimeout(() => addBotMsg("Hello! I'm EcoBot 🌱 How can I help you with green building solutions?"), 2500);
+});
+
+// ─── Particles ───
+function renderParticles() {
+  const c = document.getElementById('particles');
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.cssText = `left:${Math.random()*100}%;width:${2+Math.random()*4}px;height:${2+Math.random()*4}px;animation-duration:${6+Math.random()*10}s;animation-delay:${Math.random()*10}s;opacity:${0.2+Math.random()*0.5}`;
+    c.appendChild(p);
+  }
+}
+
+// ─── Counters ───
+function animateCount(el, target) {
+  let start = 0, dur = 1800, step = dur / 60;
+  const suffix = el.innerHTML.replace(/[0-9,]/g, '');
+  const interval = setInterval(() => {
+    start += target / (dur / step);
+    if (start >= target) { start = target; clearInterval(interval); }
+    el.innerHTML = Math.floor(start).toLocaleString() + suffix;
+  }, step);
+}
+
+function initCounters() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !e.target.dataset.counted) {
+        e.target.dataset.counted = 1;
+        const el = e.target;
+        const target = parseInt(el.dataset.count);
+        animateCount(el, target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(el => observer.observe(el));
+}
+
+// ─── Materials ───
+function renderMaterials(cat) {
+  const grid = document.getElementById('materials-grid');
+  const list = cat === 'all' ? materials : materials.filter(m => m.cat === cat);
+  grid.innerHTML = list.map(m => {
+    const [tc, bc] = (catColors[m.cat] || '#166534,#dcfce7').split(',');
+    return `<div class="material-card">
+      <img src="${m.img}" alt="${m.name}" class="material-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=70'">
+      <div class="material-body">
+        <span class="material-cat" style="background:${bc};color:${tc}">${m.cat}</span>
+        <div class="material-name">${m.name}</div>
+        <div class="material-desc">${m.desc}</div>
+        <div class="material-rating">${'★'.repeat(m.rating)}${'☆'.repeat(5-m.rating)}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+document.getElementById('filter-bar').addEventListener('click', e => {
+  if (e.target.classList.contains('filter-btn')) {
+    document.querySelectorAll('#filter-bar .filter-btn').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    renderMaterials(e.target.dataset.cat);
+  }
+});
+
+// ─── Projects ───
+function renderProjects() {
+  document.getElementById('projects-grid').innerHTML = projects.map((p, i) => `
+    <div class="project-card" onclick="openModal(${i})">
+      <img src="${p.img}" alt="${p.title}" class="project-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=75'">
+      <div class="project-overlay">
+        <span class="tag" style="margin-bottom:10px">${p.cat}</span>
+        <div class="project-title">${p.title}</div>
+        <div class="project-meta"><i class="fas fa-location-dot" style="margin-right:4px"></i>${p.loc}</div>
+        <span class="project-popup-btn">View Details <i class="fas fa-arrow-right"></i></span>
+      </div>
+    </div>
+  `).join('');
+}
+
+function openModal(i) {
+  const p = projects[i];
+  document.getElementById('modal-img').src = p.img;
+  document.getElementById('modal-tag').textContent = p.cat;
+  document.getElementById('modal-title').textContent = p.title;
+  document.getElementById('modal-loc').innerHTML = `<i class="fas fa-location-dot" style="margin-right:6px;color:var(--green-600)"></i>${p.loc}`;
+  document.getElementById('modal-desc').textContent = p.desc;
+  document.getElementById('modal-stats').innerHTML = p.stats.map(s => `<div style="text-align:center;padding:16px;background:var(--section-bg);border-radius:12px"><div style="font-family:var(--font-display);font-size:1.4rem;font-weight:900;color:var(--green-600)">${s[0]}</div><div style="font-size:0.78rem;color:var(--text-sub);margin-top:4px">${s[1]}</div></div>`).join('');
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ─── Blog ───
+function renderBlogs(cat) {
+  const list = cat === 'all' ? blogs : blogs.filter(b => b.cat === cat);
+  document.getElementById('blog-grid').innerHTML = list.map(b => `
+    <div class="blog-card">
+      <img src="${b.img}" alt="${b.title}" class="blog-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1486325212027-8081e485255e?w=500&q=70'">
+      <div class="blog-body">
+        <div class="blog-date"><i class="fas fa-calendar-alt" style="margin-right:5px"></i>${b.date}</div>
+        <div class="blog-title">${b.title}</div>
+        <div class="blog-excerpt">${b.excerpt}</div>
+        <span class="blog-read">Read Article <i class="fas fa-arrow-right"></i></span>
+      </div>
+    </div>
+  `).join('');
+}
+
+document.getElementById('blog-cats').addEventListener('click', e => {
+  if (e.target.classList.contains('filter-btn')) {
+    document.querySelectorAll('#blog-cats .filter-btn').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    renderBlogs(e.target.dataset.cat);
+  }
+});
+
+// ─── FAQs ───
+function renderFAQs() {
+  document.getElementById('faq-list').innerHTML = faqs.map((f, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <div class="faq-q" onclick="toggleFAQ(${i})">
+        ${f.q}
+        <i class="fas fa-plus faq-icon"></i>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">${f.a}</div></div>
+    </div>
+  `).join('');
+}
+
+function toggleFAQ(i) {
+  const item = document.getElementById(`faq-${i}`);
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ─── Calculator ───
+function calcUpdate() {
+  const type = document.getElementById('calc-type').value;
+  const area = parseInt(document.getElementById('calc-area').value);
+  const bill = parseInt(document.getElementById('calc-bill').value);
+  const water = parseInt(document.getElementById('calc-water').value);
+  const features = document.getElementById('calc-features').value;
+
+  document.getElementById('area-val').textContent = area.toLocaleString() + ' sq ft';
+  document.getElementById('bill-val').textContent = '₹' + bill.toLocaleString();
+  document.getElementById('water-val').textContent = water.toLocaleString() + ' L/day';
+
+  const mult = { residential: 1, commercial: 1.3, industrial: 1.6 }[type];
+  const solarCost = features === 'water' ? 0 : Math.round((area * 60 * mult) / 1000) * 1000;
+  const waterCost = features === 'solar' ? 0 : Math.round((area * 25 * mult) / 1000) * 1000;
+  const extraCost = features === 'full' ? Math.round(area * 40 * mult / 1000) * 1000 : 0;
+  const energySaving = Math.round(bill * 12 * (features === 'water' ? 0.15 : 0.42));
+  const totalCost = solarCost + waterCost + extraCost;
+  const carbon = Math.round(bill * 12 * 0.82 * 0.42);
+  const payback = totalCost > 0 ? (totalCost / energySaving).toFixed(1) : 'N/A';
+  const waterSaved = Math.round(water * 365 * 0.45);
+
+  document.getElementById('r-solar').textContent = solarCost > 0 ? '₹' + (solarCost/100000).toFixed(1) + 'L' : '—';
+  document.getElementById('r-water').textContent = waterCost > 0 ? '₹' + (waterCost/100000).toFixed(1) + 'L' : '—';
+  document.getElementById('r-energy').textContent = '₹' + energySaving.toLocaleString();
+  document.getElementById('r-carbon').textContent = carbon.toLocaleString() + ' kg';
+  document.getElementById('r-payback').textContent = payback + (payback !== 'N/A' ? ' yrs' : '');
+  document.getElementById('r-watersave').textContent = waterSaved.toLocaleString() + ' L';
+}
+
+// ─── Testimonials ───
+let tSlide = 0;
+function goToSlide(n) {
+  tSlide = n;
+  document.getElementById('t-track').style.transform = `translateX(-${n * 100}%)`;
+  document.querySelectorAll('.t-dot').forEach((d, i) => d.classList.toggle('active', i === n));
+}
+function initTestimonials() {
+  setInterval(() => goToSlide((tSlide + 1) % 3), 5000);
+}
+
+// ─── Search ───
+function openSearch() {
+  document.getElementById('search-overlay').classList.add('open');
+  document.getElementById('search-input').focus();
+}
+function closeSearch() {
+  document.getElementById('search-overlay').classList.remove('open');
+  document.getElementById('search-input').value = '';
+  document.getElementById('search-results').innerHTML = '';
+}
+document.getElementById('search-overlay').addEventListener('click', e => { if (e.target === document.getElementById('search-overlay')) closeSearch(); });
+document.getElementById('search-input').addEventListener('input', function() {
+  const q = this.value.toLowerCase().trim();
+  const res = document.getElementById('search-results');
+  if (!q) { res.innerHTML = ''; return; }
+  const matches = searchData.filter(s => s.title.toLowerCase().includes(q)).slice(0, 6);
+  if (!matches.length) { res.innerHTML = '<div class="no-results">No results found for "' + this.value + '"</div>'; return; }
+  res.innerHTML = matches.map(m => `<div class="search-item" onclick="window.location.href='${m.href}';closeSearch()"><div class="search-item-title">${m.title}</div><div class="search-item-cat">${m.cat}</div></div>`).join('');
+});
+
+// ─── Dark Mode ───
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  const html = document.documentElement;
+  const isDark = html.dataset.theme === 'dark';
+  html.dataset.theme = isDark ? 'light' : 'dark';
+  document.getElementById('theme-toggle').innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+});
+
+// ─── Mobile Menu ───
+function toggleMobile() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+function closeMobile() {
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+
+// ─── Navbar scroll ───
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY > 60;
+  document.getElementById('navbar').style.boxShadow = scrolled ? '0 4px 24px rgba(0,0,0,0.1)' : 'none';
+  document.getElementById('scroll-top').classList.toggle('show', window.scrollY > 400);
+
+  // Active nav
+  const sections = ['hero','about','services','materials','projects','blog','contact'];
+  let current = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 100) current = id;
+  });
+  document.querySelectorAll('.nav-link').forEach(l => {
+    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+  });
+});
+
+// ─── Reveal ───
+function initReveal() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// ─── Chatbot ───
+let chatOpen = false;
+function toggleChat() {
+  chatOpen = !chatOpen;
+  document.getElementById('chatbot').classList.toggle('open', chatOpen);
+  document.getElementById('chat-icon').className = chatOpen ? 'fas fa-times' : 'fas fa-leaf';
+}
+
+function addBotMsg(text) {
+  const msgs = document.getElementById('chat-msgs');
+  const typing = document.createElement('div');
+  typing.className = 'msg bot typing';
+  typing.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(typing);
+  msgs.scrollTop = msgs.scrollHeight;
+  setTimeout(() => {
+    typing.remove();
+    const msg = document.createElement('div');
+    msg.className = 'msg bot';
+    msg.innerHTML = text;
+    msgs.appendChild(msg);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 900 + Math.random() * 500);
+}
+
+function addUserMsg(text) {
+  const msgs = document.getElementById('chat-msgs');
+  const msg = document.createElement('div');
+  msg.className = 'msg user';
+  msg.textContent = text;
+  msgs.appendChild(msg);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function getBotReply(text) {
+  const t = text.toLowerCase();
+  for (const key of Object.keys(botAnswers)) {
+    if (t.includes(key)) return botAnswers[key];
+  }
+  return "🌿 Great question! I'd recommend speaking with one of our green building experts for a detailed answer. You can reach us at <strong>+91 98765 43210</strong> or use the Contact form on this page to book a free consultation.";
+}
+
+function sendChat() {
+  const input = document.getElementById('chat-in');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  addUserMsg(text);
+  document.getElementById('chat-sugs').style.display = 'none';
+  setTimeout(() => addBotMsg(getBotReply(text)), 300);
+}
+
+function askBot(text) {
+  addUserMsg(text);
+  document.getElementById('chat-sugs').style.display = 'none';
+  setTimeout(() => addBotMsg(getBotReply(text)), 300);
+}
+
+// ─── Form ───
+function submitForm() {
+  let valid = true;
+  const checks = [
+    { id: 'f-name', fg: 'fg-name', check: v => v.trim().length > 1 },
+    { id: 'f-email', fg: 'fg-email', check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+    { id: 'f-service', fg: 'fg-service', check: v => v !== '' },
+    { id: 'f-msg', fg: 'fg-msg', check: v => v.trim().length > 10 },
+  ];
+  checks.forEach(c => {
+    const el = document.getElementById(c.id);
+    const fg = document.getElementById(c.fg);
+    const ok = fg && el && c.check(el.value);
+    if (fg) fg.classList.toggle('error', !ok);
+    if (!ok) valid = false;
+  });
+  if (valid) {
+    document.getElementById('form-success').style.display = 'block';
+    ['f-name','f-email','f-phone','f-service','f-msg'].forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; });
+    setTimeout(() => { document.getElementById('form-success').style.display = 'none'; }, 5000);
+  }
+}
+
+function subscribeNewsletter() {
+  const email = document.getElementById('newsletter-email').value;
+  if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert('🌿 Thank you for subscribing! Welcome to the EcoBuild community.');
+    document.getElementById('newsletter-email').value = '';
+  } else {
+    alert('Please enter a valid email address.');
+  }
+}
+</script>
+</body>
+</html>
